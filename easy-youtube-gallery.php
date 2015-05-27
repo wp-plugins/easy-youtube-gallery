@@ -4,7 +4,7 @@ Plugin Name: Easy YouTube Gallery
 Plugin URI: http://urosevic.net/wordpress/plugins/easy-youtube-gallery/
 Description: Quick and easy embed thumbnails gallery for custom set of YouTube videos provided in shortcode, and autoplay video on click in Magnific PopUp lightbox.
 Author: Aleksandar Urošević
-Version: 1.0.0
+Version: 1.0.1
 Author URI: http://urosevic.net/
 */
 
@@ -17,12 +17,13 @@ if ( ! class_exists('WPAU_EASY_YOUTUBE_GALLERY') )
 	{
 
 		const DB_VER = 0;
-		const VER = '1.0.0';
+		const VER = '1.0.1';
 
 		/**
 		 * Construct class
 		 */
 		function __construct() {
+
 			// Register shortcodes `youtube_channel` and `ytc`
 			add_shortcode( 'easy_youtube_gallery', array($this, 'shortcode') );
 			add_shortcode( 'eytg', array($this, 'shortcode') );
@@ -31,7 +32,25 @@ if ( ! class_exists('WPAU_EASY_YOUTUBE_GALLERY') )
 			// Enqueue scripts and styles
 			add_action( 'wp_enqueue_scripts', array($this, 'enqueue_scripts') );
 
+			// Enqueue scripts and styles for Edit page
+			add_action( 'admin_enqueue_scripts', array($this, 'admin_enqueue_scripts') );
+
+			// TinyMCE AddOn
+			add_filter('mce_external_plugins', array($this, 'mce_external_plugins'), 998 );
+			add_filter("mce_buttons", array($this, "mce_buttons"), 999 );
+
 		} // END function __construct()
+
+		/**
+		 * Enqueue admin scripts and styles
+		 */
+		function admin_enqueue_scripts() {
+			global $pagenow;
+			if ( $pagenow == 'post.php' ) {
+				wp_register_style( 'easy-youtube-gallery-admin', plugins_url('assets/css/admin.min.css', __FILE__), array(), self::VER );
+				wp_enqueue_style( 'easy-youtube-gallery-admin' );
+			}
+		} // END function admin_enqueue_scripts()
 
 		/**
 		 * Enqueue frontend scripts and styles
@@ -126,6 +145,31 @@ if ( ! class_exists('WPAU_EASY_YOUTUBE_GALLERY') )
 			return $output;
 
 		} // END public function shortcode($atts)
+
+		/**
+		 * Register TinyMCE button for EYTG
+		 * @param  array $plugins Unmodified set of plugins
+		 * @return array          Set of TinyMCE plugins with EYTG addition
+		 */
+		function mce_external_plugins($plugins) {
+
+			$plugins['eytg'] = plugin_dir_url(__FILE__) . 'inc/tinymce/plugin.min.js';
+
+			return $plugins;
+
+		} // END function mce_external_plugins($plugins)
+
+		/**
+		 * Append TinyMCE button for EYTG at the end of row 1
+		 * @param  array $buttons Unmodified set of buttons
+		 * @return array          Set of TinyMCE buttons with EYTG addition
+		 */
+		function mce_buttons($buttons) {
+
+			$buttons[] = 'eytg_shortcode';
+			return $buttons;
+
+		} // END function mce_buttons($buttons)
 
 	} // END class WPAU_EASY_YOUTUBE_GALLERY
 

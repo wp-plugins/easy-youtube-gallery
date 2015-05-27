@@ -2,9 +2,9 @@
 Contributors: urkekg
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q6Q762MQ97XJ6
 Tags: youtube, channel, gallery, single, youtube player, iframe, html5, custom, video, thumbnail, embed, responsive
-Requires at least: 3.6.0
+Requires at least: 3.8.0
 Tested up to: 4.2.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -85,11 +85,16 @@ No. I even suggest to you avoid wrapping shortcode parameters to double/single q
 Just avoid empty space between ID's.
 
 == Upgrade Notice ==
+= 1.0.1 =
+New TinyMCE button to easy compose shortcode
 
 = 1.0.0 =
 Initial release
 
 == ChangeLog ==
+
+= 1.0.1 (2015-05-27) =
+* Add: TinyMCE button to easy compose shortcode
 
 = 1.0.0 (2015-05-26) =
 * Initial plugin release
@@ -97,6 +102,7 @@ Initial release
 == Screenshots ==
 
 1. Easy YouTube Gallery full shortcode and 9 videos distributed to 3 column example
+2. TinyMCE addon to easy insert shortcode
 
 == TODO ==
 
