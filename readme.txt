@@ -65,6 +65,8 @@ For automated latest or random videos collected from YouTube channel, favourites
 * `controls` (optional) to optionally hide playback controls in lightbox player (default is `1` that means "display controls", but you can set it to `0` to hide controls)
 * `class` (optional) to add custom style class if you wish to target specific styling for your own needs
 
+[youtube http://www.youtube.com/watch?v=EbYfwzmCVJI]
+
 == Installation ==
 
 1. Login to your WordPress.
