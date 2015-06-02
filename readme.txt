@@ -33,11 +33,11 @@ For automated latest or random videos collected from YouTube channel, favourites
   * `.ar-16_9` for 16:9, `.ar-4_3` for 4:3 or `.ar-square` for 1:1 aspect ratio
   * custom class provided by shortcode attribute `class`
 * Anchor:
-  * `.egty-item`
-  * `.egty-item-#` for order number of item
-  * `.egty-item-first` for first item in gallery block
-  * `.egty-item-mid` for middle items in gallery block
-  * `.egty-item-last` for last item in gallery block
+  * `.eytg-item`
+  * `.eytg-item-#` for order number of item
+  * `.eytg-item-first` for first item in gallery block
+  * `.eytg-item-mid` for middle items in gallery block
+  * `.eytg-item-last` for last item in gallery block
 * Thumbnail:
  * `.eytg-thumbnail` is class for span where we set video thumbnail as background image
 * Play icon
