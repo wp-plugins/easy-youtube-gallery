@@ -1,10 +1,18 @@
 jQuery(document).ready(function($){
-	$('.eytg-item').magnificPopupAU({
-		disableOn:700,
-		type:'iframe',
-		removalDelay:160,
-		preloader:false,
-		fixedContentPos:false,
-		mainClass:'mfp-fade',
+	function eytg_init_MPAU() {
+		$('.eytg-item').magnificPopupAU({
+			disableOn:320,
+			type:'iframe',
+			removalDelay:160,
+			preloader:false,
+			fixedContentPos:false,
+			mainClass:'eytg-mfp-lightbox',
+		});
+	}
+	jQuery(window).on('load',function(){
+		eytg_init_MPAU();
+	});
+	jQuery(document).ajaxComplete(function(){
+		eytg_init_MPAU();
 	});
 });

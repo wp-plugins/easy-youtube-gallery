@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: youtube, channel, gallery, single, youtube player, iframe, html5, custom, video, thumbnail, embed, responsive
 Requires at least: 3.8.0
 Tested up to: 4.2.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -85,6 +85,9 @@ No. I even suggest to you avoid wrapping shortcode parameters to double/single q
 Just avoid empty space between ID's.
 
 == Upgrade Notice ==
+= 1.0.2 =
+Synchronizing library with YouTube Channel
+
 = 1.0.1 =
 New TinyMCE button to easy compose shortcode
 
@@ -92,6 +95,10 @@ New TinyMCE button to easy compose shortcode
 Initial release
 
 == ChangeLog ==
+
+= 1.0.2 (2015-06-22) =
+* Update: MagnificPopupAU library to latest version (sync to YouTube Channel)
+* Update: Support to init lightbox on AJAX content loading
 
 = 1.0.1 (2015-05-27) =
 * Add: TinyMCE button to easy compose shortcode

@@ -9,6 +9,6 @@ i.mce-i-eytg {
 	padding-right: 2px;
 }
 i.mce-i-eytg:before {
-	/*content: '\f126';*/
-	content: '\f236';
+	content: '\f126';
+	/*content: '\f236';*/
 }
